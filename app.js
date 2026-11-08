@@ -1,7 +1,7 @@
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const e=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const DB={get(k,d){try{return JSON.parse(localStorage.getItem('pa_'+k))??d}catch{return d}},set(k,v){localStorage.setItem('pa_'+k,JSON.stringify(v))}};
-if(DB.get('v')!=2){['abbr','lugat','kokpit','radio','aircraft','lessons'].forEach(k=>localStorage.removeItem('pa_'+k));DB.set('v',2)}
+if(DB.get('v')!=3){['abbr','lugat','kokpit','radio','aircraft','lessons'].forEach(k=>localStorage.removeItem('pa_'+k));DB.set('v',3)}
 const G=['uz','ru','en'],isAdmin=()=>DB.get('admin',false),ADMIN_PASS='admin123';
 let LG=DB.get('lang',null);const LI=Math.max(0,G.indexOf(LG));
 const P=(s,d='|')=>{const a=s.split(d);return{uz:a[0],ru:a[1],en:a[2]}};
